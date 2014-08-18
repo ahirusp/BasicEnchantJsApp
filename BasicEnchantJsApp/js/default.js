@@ -13,6 +13,12 @@
         game.rootScene.backgroundColor = 'white';
         game.fps = 24;
         game.onload = function () {
+            var label = new Label();
+            label.text = 'Hello world!!';
+            label.x = 20;
+            label.y = 10;
+            label.color = 'green';
+            game.rootScene.addChild(label);
         };
         game.start();
     }
