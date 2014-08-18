@@ -6,11 +6,23 @@
     var app = WinJS.Application;
     var activation = Windows.ApplicationModel.Activation;
 
+    enchant();
+
+    function main() {
+        var game = new Game(320, 320);
+        game.rootScene.backgroundColor = 'white';
+        game.fps = 24;
+        game.onload = function () {
+        };
+        game.start();
+    }
+
     app.onactivated = function (args) {
         if (args.detail.kind === activation.ActivationKind.launch) {
             if (args.detail.previousExecutionState !== activation.ApplicationExecutionState.terminated) {
                 // TODO: このアプリケーションは新しく起動しました。ここでアプリケーションを
                 // 初期化します。
+                main();
             } else {
                 // TODO: このアプリケーションは中断状態から再度アクティブ化されました。
                 // ここでアプリケーションの状態を復元します。
